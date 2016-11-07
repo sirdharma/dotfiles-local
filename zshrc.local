@@ -1,0 +1,39 @@
+# recommended by brew doctor
+#export PATH="/usr/local/bin:$PATH"
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Bindings ---------------------------------------------------------------------
+
+bindkey -e                          # emacs-style key bindings
+
+bindkey "\033[3~" delete-char       # forward delete
+bindkey "\033[H"  beginning-of-line # home
+bindkey "\033[F"  end-of-line       # end
+bindkey "\033[A"  beginning-of-line # alt-up
+bindkey "\033[B"  end-of-line       # alt-down
+
+WORDCHARS=$WORDCHARS:s:/:          	# '/' marks separate words
+
+# completion system
+# http://zsh.sourceforge.net/Doc/Release/Completion-System.html ----------------
+autoload -U compinit    # autoload the function compinit
+compinit                # initialize the use of the completion system
+
+zstyle ':completion:*' menu select  # menu selection will be started unconditionally
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'    # case-insensitive completion
+
+# history search
+autoload -U history-search-end
+
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "\033[A" history-beginning-search-backward-end  # cursor up
+bindkey "\033[B" history-beginning-search-forward-end   # cursor down
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+PERL_MB_OPT="--install_base \"/Users/francois/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/francois/perl5"; export PERL_MM_OPT;
