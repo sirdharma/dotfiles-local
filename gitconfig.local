@@ -1,9 +1,12 @@
 [user]
   name = François Pradel
   email = francois.pradel@gmail.com
-[filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-  required = true
 [credential]
   helper = osxkeychain
+[alias]
+  sl = stash list
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
