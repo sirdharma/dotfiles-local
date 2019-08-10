@@ -1,3 +1,3 @@
 ### oh-my-zsh
-BUNDLED_COMMANDS=(fastlane tux)
+BUNDLED_COMMANDS=(fastlane rails tux)
 [[ -f ~/.zshrc.oh-my-zsh.local ]] && source ~/.zshrc.oh-my-zsh.local
