@@ -1,3 +1,4 @@
 ### oh-my-zsh
 BUNDLED_COMMANDS=(fastlane rails tux)
+ZSH_DISABLE_COMPFIX=true
 [[ -f ~/.zshrc.oh-my-zsh.local ]] && source ~/.zshrc.oh-my-zsh.local
